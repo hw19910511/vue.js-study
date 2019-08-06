@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>星座判断</title>
+	<style type="text/css"> 
+	*{ margin:0;padding:0 }
+	.search-box{
+	   width:500px;
+	   height:50px;
+	   margin:100px auto 0;
+	   border:1px solid red;
+	   background-color:pink;
+	   text-align:center;
+	   line-height:50px;
+	}
+	.xingzuo-detail{
+	   text-align:center;
+	}
+	</style>
+	<script type="text/javascript" src="vue.min.js"></script>
+</head>
+<body>
+	<div id="demo"> 
+	   <div class="search-box"> 
+	     请输入您的星座：
+		 <input type="text" name="" id="xingzuo" v-model="xingzuoming"/>
+		 <input type="button" value="确定" @click="query"/>
+	   </div>
+	   <div class="xingzuo-detail" v-html="xingzuodetail"></div>    
+	</div>
+	<script type="text/javascript"> 
+	new Vue({
+	  el:'#demo',
+	  data:{
+	    xingzuoming:'',
+		xingzuodetail:''
+	  },
+	  methods:{
+	    query:function(){
+		   switch(this.xingzuoming){
+		      case '水瓶座':
+			    this.xingzuodetail="<h1>水平座</h1>";
+				break;
+			  case '金牛座':
+			    this.xingzuodetail="<h1>金牛座</h1>";
+				break;
+			  case '处女座':
+			    this.xingzuodetail="<h1>处女座</h1>";
+				break;
+			  case '白羊座':
+			    this.xingzuodetail="<h1>白羊座</h1>";
+				break;
+			  case '天蝎座':
+			    this.xingzuodetail="<h1>天蝎座</h1>";
+				break;
+			  case '天平座':
+			    this.xingzuodetail="<h1>天平座</h1>";
+				break;
+			  case '射手座':
+			    this.xingzuodetail="<h1>射手座</h1>";
+				break;
+			  case '双子座':
+			    this.xingzuodetail="<h1>双子座</h1>";
+				break;
+			   case '巨蟹座':
+			    this.xingzuodetail="<h1>巨蟹座</h1>";
+				break;
+				case '狮子座':
+			    this.xingzuodetail="<h1>狮子座</h1>";
+				break;
+				case '双鱼座':
+			    this.xingzuodetail="<h1>双鱼座</h1>";
+				break;
+				case '魔蝎座':
+			    this.xingzuodetail="<h1>魔蝎座</h1>";
+				break;
+				default:
+				 this.xingzuodetail="请输入正确的星座，例如：金牛座等";
+		   }
+		}
+	  }
+	});
+	</script>
+</body>
+</html>

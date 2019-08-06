@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>vue.js-事件</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<style type="text/css"> 
+	</style>
+	<script type="text/javascript" src="vue.min.js"></script> 
+	<script type="text/javascript"> 
+	 window.onload=function(){
+	    var c= new Vue({
+		   el:'#box',
+		   data:{
+		     arr:['apple','banana','orange','pear'],
+			 json:{a:'apple',b:'banana',c:'orange'}
+		   },
+		   methods:{
+		     show:function(){
+			    alert("hello vuejs");
+			 },
+			 add:function(){
+			   //alert(this.arr);
+			   this.arr.push("tomato");
+			 }
+		   }
+		});
+	 };
+	</script>
+</head>
+<body>
+	<div id="box">
+	 <input type="button" value="按钮" v-on:click="show()"/>
+	 <input type="button" value="添加" v-on:click="add()"/>
+	 <br />
+	 <ul>
+	 	<li v-for="value in arr">{{value}}</li>
+	 </ul>
+	</div>
+</body>
+</html>

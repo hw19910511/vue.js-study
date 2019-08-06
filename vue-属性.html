@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-属性</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<style type="text/css"> 
+	</style>
+	
+	<script type="text/javascript" src="vue.min.js"></script> 
+	 <script type="text/javascript"> 
+	 window.onload=function(){
+	    new Vue({
+		   el:'#box',
+		   data:{
+		      url:'https://www.baidu.com/img/bd_logo1.png',
+			  w:'200px',
+			  t:'picture'
+		   },
+            methods:{
+			 
+			}		   
+		});
+	 };
+	</script> 
+</head>
+<body>
+	<div id="box"> 
+	<!-- <img src="{{url}}" alt="" /><br /> -->
+	<img v-bind:src="url" alt="" /><br />
+	<img :src="url" :width="w" :title="t"/>
+	</div>
+</body>
+</html>
